@@ -45,10 +45,11 @@ public class Card {
     }
 
     public int getValue() {
-        return switch (this.rank) {
-            // Java infers type from this.rank
-            case JACK, QUEEN, KING -> 10;
-            default -> this.rank.ordinal() + 1;
-        };
+        // delegating the getValue() call to the lower getValue() call
+        return this.rank.getValue();
     }
 }
+
+// NOTES:
+// in OOP you want your methods or behaviour in OOP terminology to live as closely as possible to the data that they work with
+// the data that
