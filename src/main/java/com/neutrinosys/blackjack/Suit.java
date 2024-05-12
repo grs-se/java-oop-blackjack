@@ -1,10 +1,25 @@
 package com.neutrinosys.blackjack;
 
 public enum Suit {
-    CLUBS,
-    DIAMONDS,
-    HEARTS,
-    SPADES;
+    CLUBS('\u2663'),
+//    CLUBS('♣'),
+    DIAMONDS('\u2666'),
+//    DIAMONDS('♦'),
+    HEARTS('\u2665'),
+//    HEARTS('♥'),
+    SPADES('\u2660');
+//    SPADES('♠');
+
+    private char symbol;
+
+    Suit(char symbol) {
+        this.symbol = symbol;
+    }
+
+    @Override
+    public String toString() {
+        return Character.toString(this.symbol);
+    }
 }
 
 // NOTES ON ENUMS:
