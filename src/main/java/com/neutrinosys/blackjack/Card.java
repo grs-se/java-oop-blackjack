@@ -43,4 +43,12 @@ public class Card {
 
 
     }
+
+    public int getValue() {
+        return switch (this.rank) {
+            // Java infers type from this.rank
+            case JACK, QUEEN, KING -> 10;
+            default -> this.rank.ordinal() + 1;
+        };
+    }
 }
